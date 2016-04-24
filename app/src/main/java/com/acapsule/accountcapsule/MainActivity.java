@@ -3,8 +3,6 @@ package com.acapsule.accountcapsule;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.acapsule.accountcapsule.parentfrags.MainContentFragment;
-
 public class MainActivity extends AppCompatActivity {
 
 

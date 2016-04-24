@@ -133,13 +133,56 @@
                         android:layout_marginLeft="6dp"
                         android:tint="@color/colorDivider" />
                 </RelativeLayout>
-                <TextView
+                <RelativeLayout
                     android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:background="@color/colorAccent"
-                    android:layout_gravity="center_vertical" />
+                    android:layout_height="72dp"
+                    android:layout_weight="1">
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_cardview_x"
+                        android:layout_marginRight="@dimen/margin_cardview_x"
+                        android:layout_marginTop="@dimen/margin_cardview_y"
+                        android:layout_marginBottom="@dimen/margin_cardview_y">
+                        <RelativeLayout
+                            android:id="@+id/scrollTypes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/colorPrimary"
+                            android:alpha="0">
+                            <LinearLayout
+                                android:id="@+id/typesPart2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/typesPart1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:layout_toLeftOf="@id/typesPart2">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:layout_toRightOf="@id/typesPart2">
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                    <ImageView
+                        android:id="@+id/imgType"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/whattype"/>
+
+                </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="72dp"
                     android:layout_height="72dp">

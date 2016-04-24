@@ -1,4 +1,4 @@
-package com.acapsule.accountcapsule.parentfrags;
+package com.acapsule.accountcapsule;
 
 
 import android.animation.AnimatorSet;

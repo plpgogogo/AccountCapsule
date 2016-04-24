@@ -1,6 +1,8 @@
 package com.acapsule.accountcapsule.childfrags;
 
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.acapsule.accountcapsule.R;
@@ -65,6 +68,10 @@ public class RecordFragment extends Fragment {
     ImageView signrightDate;
     @Bind(R.id.arrowright_date)
     ImageView arrowrightDate;
+    @Bind(R.id.scrollTypes)
+    LinearLayout scrollTypes;
+    @Bind(R.id.imgType)
+    ImageView imgType;
     private View mView;
     private int year;
     private int month;
@@ -94,7 +101,7 @@ public class RecordFragment extends Fragment {
         ButterKnife.unbind(this);
     }
 
-    private void reset(){
+    private void reset() {
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
@@ -103,12 +110,21 @@ public class RecordFragment extends Fragment {
         tvDate.setText(year + "-" + (month + 1) + "-" + day);
     }
 
+    private void showTypes(){
+        AnimatorSet set = new AnimatorSet();
+        ObjectAnimator hide = ObjectAnimator.ofFloat(imgType, "alpha", 0.0f).setDuration(200);
+        ObjectAnimator show = ObjectAnimator.ofFloat(scrollTypes, "alpha", 1.0f).setDuration(200);
+        show.setStartDelay(200);
+        set.playSequentially(hide, show);
+        set.start();
+    }
+
     private String getMoneyPlus() {
         String moneyString = tvMoney.getText().toString();
-        if(moneyString.contains(".")){
+        if (moneyString.contains(".")) {
             double money = Double.parseDouble(moneyString);
             return String.valueOf(money + 1);
-        }else{
+        } else {
             int money = Integer.parseInt(moneyString);
             return String.valueOf(money + 1);
         }
@@ -117,12 +133,12 @@ public class RecordFragment extends Fragment {
 
     private String getMoneyMinus() {
         String moneyString = tvMoney.getText().toString();
-        if(moneyString.contains(".")){
+        if (moneyString.contains(".")) {
             double money = Double.parseDouble(moneyString);
-            return money - 1 <= 0 ? "0": String.valueOf(money - 1);
-        }else{
+            return money - 1 <= 0 ? "0" : String.valueOf(money - 1);
+        } else {
             int money = Integer.parseInt(moneyString);
-            return money - 1 <=0 ? "0" : String.valueOf(money - 1);
+            return money - 1 <= 0 ? "0" : String.valueOf(money - 1);
         }
 
     }
@@ -141,11 +157,14 @@ public class RecordFragment extends Fragment {
         return calendar.get(Calendar.YEAR) + "-" + (calendar.get(Calendar.MONTH) + 1) + "-" + calendar.get(Calendar.DAY_OF_MONTH);
     }
 
-    @OnClick({R.id.tvDate, R.id.tvMoney, R.id.arrowleft_money, R.id.arrowright_money, R.id.arrowleft_type, R.id.arrowright_type, R.id.arrowleft_date, R.id.arrowright_date})
+    @OnClick({R.id.tvDate, R.id.imgType, R.id.tvMoney, R.id.arrowleft_money, R.id.arrowright_money, R.id.arrowleft_type, R.id.arrowright_type, R.id.arrowleft_date, R.id.arrowright_date})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tvMoney:
 
+                break;
+            case R.id.imgType:
+                showTypes();
                 break;
             case R.id.tvDate:
                 DatePickerDialog.OnDateSetListener onDateSetListener = new DatePickerDialog.OnDateSetListener() {

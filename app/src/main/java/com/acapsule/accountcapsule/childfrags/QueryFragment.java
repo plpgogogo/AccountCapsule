@@ -1,6 +1,7 @@
 package com.acapsule.accountcapsule.childfrags;
 
 
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
@@ -110,14 +111,20 @@ public class QueryFragment extends Fragment {
                 break;
             case R.id.addDate:
                 barToFocused(removeDate, signDate);
-                addDate.setVisibility(View.INVISIBLE);
+                addDate.setAlpha(0.0f);
+                addDate.setRotation(45f);
                 tvDate1.setHint("");
                 addDate.setEnabled(false);
                 frameDate2.setVisibility(View.VISIBLE);
                 break;
             case R.id.removeDate:
                 barToUnFocused(removeDate, signDate);
-                addDate.setVisibility(View.VISIBLE);
+                AnimatorSet set = new AnimatorSet();
+                set.playTogether(
+                        ObjectAnimator.ofFloat(addDate, "alpha", 0.0f, 1.0f).setDuration(200),
+                        ObjectAnimator.ofFloat(addDate, "rotation", -45.0f).setDuration(200)
+                );
+                set.start();
                 addDate.setEnabled(true);
                 frameDate2.setVisibility(View.GONE);
                 clearBar(tvDate1);

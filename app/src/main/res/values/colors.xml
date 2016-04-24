@@ -9,4 +9,6 @@
     <color name="colorDivider">#B6B6B6</color>
     <color name="colorIconAndText">#FFFFFF</color>
     <color name="colorFocusedBtn">#F44336</color>
+    <color name="colorFlowIn">#8BC34A</color>
+    <color name="colorFlowOut">#F44336</color>
 </resources>

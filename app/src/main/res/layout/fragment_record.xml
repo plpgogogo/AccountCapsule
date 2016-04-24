@@ -62,7 +62,7 @@
                     android:layout_height="48dp"
                     android:background="@null"
                     android:singleLine="true"
-                    android:textSize="24sp"
+                    android:textSize="36sp"
                     android:fontFamily="sans-serif"
                     android:layout_marginLeft="@dimen/margin_cardview_x"
                     android:layout_marginRight="@dimen/margin_cardview_x"
@@ -141,36 +141,124 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/margin_cardview_x"
-                        android:layout_marginRight="@dimen/margin_cardview_x"
-                        android:layout_marginTop="@dimen/margin_cardview_y"
-                        android:layout_marginBottom="@dimen/margin_cardview_y">
+                        android:scrollbars="none">
+
                         <RelativeLayout
-                            android:id="@+id/scrollTypes"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:background="@color/colorPrimary"
-                            android:alpha="0">
-                            <LinearLayout
-                                android:id="@+id/typesPart2"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-                            </LinearLayout>
-                            <LinearLayout
-                                android:id="@+id/typesPart1"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_toLeftOf="@id/typesPart2">
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:layout_toRightOf="@id/typesPart2">
-                            </LinearLayout>
+                            android:id="@+id/scrollTypes"
+                            android:visibility="gone">
+                            <ImageView
+                                android:id="@+id/typeEarnBorrow"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/type_earn_borrow"
+                                android:clickable="false"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="8dp" />
+                            <ImageView
+                                android:layout_toEndOf="@id/typeEarnBorrow"
+                                android:id="@+id/typeEarnBonus"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/type_earn_bonus"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="8dp" />
+
+                            <ImageView
+                                android:layout_toEndOf="@id/typeEarnBonus"
+                                android:id="@+id/typeEarnExtraincom"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/type_earn_extraincom"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="8dp" />
+
+                            <ImageView
+                                android:layout_toEndOf="@id/typeEarnExtraincom"
+                                android:id="@+id/typeEarnHongbao"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/type_earn_hongbao"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="8dp" />
+
+                            <ImageView
+                                android:layout_toEndOf="@id/typeEarnHongbao"
+                                android:id="@+id/typeEarnSalary"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/type_earn_salary"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="8dp" />
+                            <ImageView
+                                android:layout_toEndOf="@id/typeEarnSalary"
+                                android:id="@+id/typeEarnPocketMoney"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/type_earn_pocketmoney"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="8dp" />
+                            <ImageView
+                                android:layout_toEndOf="@id/typeEarnPocketMoney"
+                                android:id="@+id/typeCostCatering"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/type_cost_catering"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="8dp" />
+                            <ImageView
+                                android:layout_toEndOf="@id/typeCostCatering"
+                                android:id="@+id/typeCostTraffic"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/type_cost_traffic"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="8dp" />
+                            <ImageView
+                                android:layout_toEndOf="@id/typeCostTraffic"
+                                android:id="@+id/typeCostTrifles"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/type_cost_trifles"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="8dp" />
+                            <ImageView
+                                android:layout_toEndOf="@id/typeCostTrifles"
+                                android:id="@+id/typeCostEntertain"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/type_cost_entertain"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="8dp" />
+                            <ImageView
+                                android:layout_toEndOf="@id/typeCostEntertain"
+                                android:id="@+id/typeCostShopping"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/type_cost_shopping"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="8dp" />
+                            <ImageView
+                                android:layout_toEndOf="@id/typeCostShopping"
+                                android:id="@+id/typeCostLend"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/type_cost_lend"
+                                android:layout_centerVertical="true" />
+
                         </RelativeLayout>
 
                     </HorizontalScrollView>

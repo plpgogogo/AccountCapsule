@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_small"
+        app:cardCornerRadius="@dimen/cardview_default_radius"
+        android:elevation="@dimen/cardview_default_elevation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_medium">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_medium">
+                    <RelativeLayout
+                        android:layout_width="72dp"
+                        android:layout_height="72dp">
+                        <ImageView
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:background="@drawable/bg_cleft"
+                            android:id="@+id/capleft_money" />
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_attach_money"
+                            android:tint="@color/colorDivider"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginRight="10dp"
+                            android:id="@+id/signleft_money" />
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_keyboard_arrow_left"
+                            android:tint="@color/colorDivider"
+                            android:layout_alignBottom="@+id/signleft_money"
+                            android:layout_alignParentStart="true"
+                            android:id="@+id/arrowleft_money"
+                            android:layout_marginLeft="6dp" />
+                    </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvMoney"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="48dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textSize="24sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginLeft="@dimen/margin_cardview_x"
+                    android:layout_marginRight="@dimen/margin_cardview_x"
+                    android:layout_marginTop="@dimen/margin_cardview_y"
+                    android:layout_marginBottom="@dimen/margin_cardview_y"
+                    android:gravity="center"
+                    android:textColorHint="@color/colorDivider"
+                    android:layout_gravity="center_vertical" />
+                <RelativeLayout
+                    android:layout_width="72dp"
+                    android:layout_height="72dp">
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:background="@drawable/bg_cright"
+                        android:id="@+id/capright_money" />
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_attach_money"
+                        android:tint="@color/colorDivider"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/signright_money" />
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_keyboard_arrow_right"
+                        android:layout_alignTop="@+id/signright_money"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/arrowright_money"
+                        android:layout_marginRight="6dp"
+                        android:tint="@color/colorDivider" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_large">
+                <RelativeLayout
+                    android:layout_width="72dp"
+                    android:layout_height="72dp">
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:background="@drawable/bg_cleft"
+                        android:id="@+id/capleft_type" />
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_layers"
+                        android:tint="@color/colorDivider"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/signleft_type" />
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_keyboard_arrow_left"
+                        android:layout_alignTop="@+id/signleft_type"
+                        android:layout_alignParentStart="true"
+                        android:id="@+id/arrowleft_type"
+                        android:layout_marginLeft="6dp"
+                        android:tint="@color/colorDivider" />
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@color/colorAccent"
+                    android:layout_gravity="center_vertical" />
+                <RelativeLayout
+                    android:layout_width="72dp"
+                    android:layout_height="72dp">
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:background="@drawable/bg_cright"
+                        android:id="@+id/capright_type" />
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_layers"
+                        android:tint="@color/colorDivider"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/signright_type" />
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_keyboard_arrow_right"
+                        android:layout_alignTop="@+id/signright_type"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/arrowright_type"
+                        android:layout_marginRight="6dp"
+                        android:tint="@color/colorDivider" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_large">
+                <RelativeLayout
+                    android:layout_width="72dp"
+                    android:layout_height="72dp">
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:background="@drawable/bg_cleft"
+                        android:id="@+id/capleft_date" />
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_date_range_black_48dp"
+                        android:tint="@color/colorDivider"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/signleft_date" />
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_keyboard_arrow_left"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/signleft_date"
+                        android:id="@+id/arrowleft_date"
+                        android:layout_marginLeft="6dp"
+                        android:tint="@color/colorDivider" />
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="48dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textSize="24sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginLeft="@dimen/margin_cardview_x"
+                    android:layout_marginRight="@dimen/margin_cardview_x"
+                    android:layout_marginTop="@dimen/margin_cardview_y"
+                    android:layout_marginBottom="@dimen/margin_cardview_y"
+                    android:gravity="center"
+                    android:textColorHint="@color/colorDivider"
+                    android:layout_gravity="center_vertical" />
+                <RelativeLayout
+                    android:layout_width="72dp"
+                    android:layout_height="72dp">
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:background="@drawable/bg_cright"
+                        android:id="@+id/capright_date" />
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_date_range_black_48dp"
+                        android:tint="@color/colorDivider"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/signright_date" />
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_keyboard_arrow_right"
+                        android:layout_alignTop="@+id/signright_date"
+                        android:layout_toEndOf="@+id/signright_date"
+                        android:id="@+id/arrowright_date"
+                        android:layout_marginRight="6dp"
+                        android:tint="@color/colorDivider" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

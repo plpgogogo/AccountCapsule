@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardviewQueryFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/elevation_unit"
+        app:cardCornerRadius="@dimen/elevation_unit"
+        android:layout_marginLeft="@dimen/margin_cardview_x"
+        android:layout_marginRight="@dimen/margin_cardview_x"
+        android:layout_marginTop="@dimen/margin_cardview_y"
+        android:layout_marginBottom="@dimen/margin_cardview_y">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="@dimen/margin_cardview_x"
+                android:layout_marginRight="@dimen/margin_cardview_x"
+                android:layout_marginTop="@dimen/margin_cardview_y"
+                android:layout_marginBottom="@dimen/margin_cardview_y"
+                android:src="@drawable/ic_view_list_black_48dp"
+                android:tint="@color/colorDivider"/>
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="32dp"
+                android:background="@null"
+                android:singleLine="true"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                android:layout_marginLeft="@dimen/margin_cardview_x"
+                android:layout_marginRight="@dimen/margin_cardview_x"
+                android:layout_marginTop="@dimen/margin_cardview_y"
+                android:layout_marginBottom="@dimen/margin_cardview_y"/>
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="@dimen/margin_cardview_x"
+                android:layout_marginRight="@dimen/margin_cardview_x"
+                android:layout_marginTop="@dimen/margin_cardview_y"
+                android:layout_marginBottom="@dimen/margin_cardview_y"
+                android:src="@drawable/ic_search_black_48dp"
+                android:tint="@color/colorDivider"/>
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/elevation_unit"
+        app:cardCornerRadius="@dimen/elevation_unit"
+        android:layout_marginLeft="@dimen/margin_cardview_x"
+        android:layout_marginRight="@dimen/margin_cardview_x"
+        android:layout_marginTop="@dimen/margin_cardview_y"
+        android:layout_marginBottom="@dimen/margin_cardview_y"
+        android:animateLayoutChanges="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/cardFrame">
+
+            <!--额度-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="@dimen/margin_cardview_x"
+                    android:layout_marginRight="@dimen/margin_cardview_x"
+                    android:layout_marginTop="@dimen/margin_cardview_y"
+                    android:layout_marginBottom="@dimen/margin_cardview_y"
+                    android:src="@drawable/ic_attach_money"
+                    android:tint="@color/colorDivider"
+                    android:id="@+id/signMoney" />
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="32dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:enabled="false"
+                    android:imeOptions="actionDone"
+                    android:hint="金      额"
+                    android:textColorHint="@color/colorDivider"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/margin_cardview_x"
+                    android:layout_marginRight="@dimen/margin_cardview_x"
+                    android:layout_marginTop="@dimen/margin_cardview_y"
+                    android:layout_marginBottom="@dimen/margin_cardview_y"
+                    android:id="@+id/etMoney"
+                    android:editable="false"
+                    android:inputType="numberDecimal" />
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="@dimen/margin_cardview_x"
+                    android:layout_marginRight="@dimen/margin_cardview_x"
+                    android:layout_marginTop="@dimen/margin_cardview_y"
+                    android:layout_marginBottom="@dimen/margin_cardview_y"
+                    android:src="@drawable/ic_add_circle_outline_black_48dp"
+                    android:tint="@color/colorDivider"
+                    android:id="@+id/addMoney" />
+            </LinearLayout>
+
+
+            <!--类型-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="@dimen/margin_cardview_x"
+                    android:layout_marginRight="@dimen/margin_cardview_x"
+                    android:layout_marginTop="@dimen/margin_cardview_y"
+                    android:layout_marginBottom="@dimen/margin_cardview_y"
+                    android:src="@drawable/ic_layers"
+                    android:tint="@color/colorDivider"
+                    android:id="@+id/signType" />
+
+                <HorizontalScrollView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="32dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginLeft="@dimen/margin_cardview_x"
+                    android:layout_marginRight="@dimen/margin_cardview_x"
+                    android:layout_marginTop="@dimen/margin_cardview_y"
+                    android:layout_marginBottom="@dimen/margin_cardview_y"
+                    android:visibility="gone"
+                    android:id="@+id/scrollType" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="32dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:hint="类      型"
+                    android:textColorHint="@color/colorDivider"
+                    android:layout_marginLeft="@dimen/margin_cardview_x"
+                    android:layout_marginRight="@dimen/margin_cardview_x"
+                    android:layout_marginTop="@dimen/margin_cardview_y"
+                    android:layout_marginBottom="@dimen/margin_cardview_y"
+                    android:id="@+id/tvType" />
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="@dimen/margin_cardview_x"
+                    android:layout_marginRight="@dimen/margin_cardview_x"
+                    android:layout_marginTop="@dimen/margin_cardview_y"
+                    android:layout_marginBottom="@dimen/margin_cardview_y"
+                    android:src="@drawable/ic_add_circle_outline_black_48dp"
+                    android:tint="@color/colorDivider"
+                    android:id="@+id/addType" />
+            </LinearLayout>
+
+
+            <!--日期1-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="@dimen/margin_cardview_x"
+                    android:layout_marginRight="@dimen/margin_cardview_x"
+                    android:layout_marginTop="@dimen/margin_cardview_y"
+                    android:layout_marginBottom="@dimen/margin_cardview_y"
+                    android:src="@drawable/ic_date_range_black_48dp"
+                    android:tint="@color/colorDivider"
+                    android:id="@+id/signDate" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="32dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginLeft="@dimen/margin_cardview_x"
+                    android:layout_marginRight="@dimen/margin_cardview_x"
+                    android:layout_marginTop="@dimen/margin_cardview_y"
+                    android:layout_marginBottom="@dimen/margin_cardview_y"
+                    android:gravity="center"
+                    android:hint="日      期"
+                    android:textColorHint="@color/colorDivider"
+                    android:id="@+id/tvDate1" />
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="@dimen/margin_cardview_x"
+                    android:layout_marginRight="@dimen/margin_cardview_x"
+                    android:layout_marginTop="@dimen/margin_cardview_y"
+                    android:layout_marginBottom="@dimen/margin_cardview_y"
+                    android:src="@drawable/ic_add_circle_outline_black_48dp"
+                    android:tint="@color/colorDivider"
+                    android:visibility="visible"
+                    android:id="@+id/addDate"
+                    android:clickable="true" />
+            </LinearLayout>
+
+            <!--日期2-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/frame_date2"
+                android:visibility="gone">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="@dimen/margin_cardview_x"
+                    android:layout_marginRight="@dimen/margin_cardview_x"
+                    android:layout_marginTop="@dimen/margin_cardview_y"
+                    android:layout_marginBottom="@dimen/margin_cardview_y"
+                    android:visibility="invisible"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="32dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginLeft="@dimen/margin_cardview_x"
+                    android:layout_marginRight="@dimen/margin_cardview_x"
+                    android:layout_marginTop="@dimen/margin_cardview_y"
+                    android:layout_marginBottom="@dimen/margin_cardview_y"
+                    android:id="@+id/tvDate2" />
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="@dimen/margin_cardview_x"
+                    android:layout_marginRight="@dimen/margin_cardview_x"
+                    android:layout_marginTop="@dimen/margin_cardview_y"
+                    android:layout_marginBottom="@dimen/margin_cardview_y"
+                    android:src="@drawable/ic_add_circle_outline_black_48dp"
+                    android:tint="@color/colorDivider"
+                    android:id="@+id/removeDate" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

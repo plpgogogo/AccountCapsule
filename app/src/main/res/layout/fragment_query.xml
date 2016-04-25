@@ -66,13 +66,13 @@
         android:layout_marginLeft="@dimen/margin_cardview_x"
         android:layout_marginRight="@dimen/margin_cardview_x"
         android:layout_marginTop="@dimen/margin_cardview_y"
-        android:layout_marginBottom="@dimen/margin_cardview_y"
-        android:animateLayoutChanges="true">
+        android:layout_marginBottom="@dimen/margin_cardview_y">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:animateLayoutChanges="true"
             android:id="@+id/cardFrame">
 
             <!--额度-->
@@ -186,38 +186,102 @@
             </LinearLayout>
 
 
-            <!--日期1-->
-            <LinearLayout
+            <!--日期-->
+            <RelativeLayout
+                android:id="@+id/dateFrame"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginLeft="@dimen/margin_cardview_x"
-                    android:layout_marginRight="@dimen/margin_cardview_x"
-                    android:layout_marginTop="@dimen/margin_cardview_y"
-                    android:layout_marginBottom="@dimen/margin_cardview_y"
-                    android:src="@drawable/ic_date_range_black_48dp"
-                    android:tint="@color/colorDivider"
-                    android:id="@+id/signDate" />
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="32dp"
-                    android:background="@null"
-                    android:singleLine="true"
-                    android:textSize="16sp"
-                    android:fontFamily="sans-serif"
-                    android:layout_marginLeft="@dimen/margin_cardview_x"
-                    android:layout_marginRight="@dimen/margin_cardview_x"
-                    android:layout_marginTop="@dimen/margin_cardview_y"
-                    android:layout_marginBottom="@dimen/margin_cardview_y"
-                    android:gravity="center"
-                    android:hint="日      期"
-                    android:textColorHint="@color/colorDivider"
-                    android:id="@+id/tvDate1" />
+
+                <!--日期1-->
+
+                <LinearLayout
+                    android:id="@+id/frame_date1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:animateLayoutChanges="true">
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="@dimen/margin_cardview_x"
+                        android:layout_marginRight="@dimen/margin_cardview_x"
+                        android:layout_marginTop="@dimen/margin_cardview_y"
+                        android:layout_marginBottom="@dimen/margin_cardview_y"
+                        android:src="@drawable/ic_date_range_black_48dp"
+                        android:tint="@color/colorDivider"
+                        android:id="@+id/signDate" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="32dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginLeft="@dimen/margin_cardview_x"
+                        android:layout_marginRight="@dimen/margin_cardview_x"
+                        android:layout_marginTop="@dimen/margin_cardview_y"
+                        android:layout_marginBottom="@dimen/margin_cardview_y"
+                        android:gravity="center"
+                        android:hint="日      期"
+                        android:textColorHint="@color/colorDivider"
+                        android:id="@+id/tvDate1" />
+
+                    <View
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="@dimen/margin_cardview_x"
+                        android:layout_marginRight="@dimen/margin_cardview_x"
+                        android:layout_marginTop="@dimen/margin_cardview_y"
+                        android:layout_marginBottom="@dimen/margin_cardview_y" />
+
+                </LinearLayout>
+
+                <!--日期2-->
+                <LinearLayout
+                    android:layout_below="@id/frame_date1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/frame_date2"
+                    android:visibility="gone">
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="@dimen/margin_cardview_x"
+                        android:layout_marginRight="@dimen/margin_cardview_x"
+                        android:layout_marginTop="@dimen/margin_cardview_y"
+                        android:layout_marginBottom="@dimen/margin_cardview_y"
+                        android:visibility="invisible"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="32dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginLeft="@dimen/margin_cardview_x"
+                        android:layout_marginRight="@dimen/margin_cardview_x"
+                        android:layout_marginTop="@dimen/margin_cardview_y"
+                        android:layout_marginBottom="@dimen/margin_cardview_y"
+                        android:id="@+id/tvDate2" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="@dimen/margin_cardview_x"
+                        android:layout_marginRight="@dimen/margin_cardview_x"
+                        android:layout_marginTop="@dimen/margin_cardview_y"
+                        android:layout_marginBottom="@dimen/margin_cardview_y"
+                        android:src="@drawable/ic_add_circle_outline_black_48dp"
+                        android:tint="@color/colorDivider"
+                        android:id="@+id/removeDate"
+                        android:visibility="invisible" />
+                </LinearLayout>
 
                 <ImageView
                     android:layout_width="32dp"
@@ -229,51 +293,11 @@
                     android:src="@drawable/ic_add_circle_outline_black_48dp"
                     android:tint="@color/colorDivider"
                     android:visibility="visible"
+                    android:layout_alignParentEnd="true"
                     android:id="@+id/addDate"
                     android:clickable="true" />
-            </LinearLayout>
 
-            <!--日期2-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/frame_date2"
-                android:visibility="gone">
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginLeft="@dimen/margin_cardview_x"
-                    android:layout_marginRight="@dimen/margin_cardview_x"
-                    android:layout_marginTop="@dimen/margin_cardview_y"
-                    android:layout_marginBottom="@dimen/margin_cardview_y"
-                    android:visibility="invisible"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="32dp"
-                    android:background="@null"
-                    android:singleLine="true"
-                    android:textSize="16sp"
-                    android:fontFamily="sans-serif"
-                    android:layout_marginLeft="@dimen/margin_cardview_x"
-                    android:layout_marginRight="@dimen/margin_cardview_x"
-                    android:layout_marginTop="@dimen/margin_cardview_y"
-                    android:layout_marginBottom="@dimen/margin_cardview_y"
-                    android:id="@+id/tvDate2" />
-
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginLeft="@dimen/margin_cardview_x"
-                    android:layout_marginRight="@dimen/margin_cardview_x"
-                    android:layout_marginTop="@dimen/margin_cardview_y"
-                    android:layout_marginBottom="@dimen/margin_cardview_y"
-                    android:src="@drawable/ic_add_circle_outline_black_48dp"
-                    android:tint="@color/colorDivider"
-                    android:id="@+id/removeDate" />
-            </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
 

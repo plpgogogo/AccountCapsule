@@ -11,12 +11,15 @@ import java.util.List;
  */
 public class MyFragmentPageAdapter extends FragmentPagerAdapter {
 
+    private FragmentManager fragmentManager;
     private List<Fragment> fragmentList;
 
     public MyFragmentPageAdapter(FragmentManager fragmentManager, List<Fragment> fragmentList){
         super(fragmentManager);
         this.fragmentList = fragmentList;
     }
+
+
 
     @Override
     public Fragment getItem(int position) {

@@ -29,8 +29,6 @@ dependencies {
     compile 'com.android.support:support-v4:23.3.0'
     compile 'com.github.lecho:hellocharts-android:v1.5.8'
     compile 'com.android.support:design:23.3.0'
-    compile 'com.squareup.retrofit2:retrofit:2.0.0'// 会引用 okHttp
-    compile 'com.squareup.retrofit2:converter-gson:2.0.0'// 会引用 Gson
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0'// 会引用 RxJava
     compile 'com.j256.ormlite:ormlite-android:4.48'
+    compile 'com.android.support:percent:23.3.0'
 }

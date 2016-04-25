@@ -47,7 +47,6 @@ public class MainContentFragment extends Fragment {
     ViewPager viewpagerContent;
 
     private View mView;
-    private Context mContext;
 
     private ColorStateList dark;
     private ColorStateList light;
@@ -60,7 +59,6 @@ public class MainContentFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mContext = getContext();
         mView = inflater.inflate(R.layout.fragment_main_content, container, false);
         ButterKnife.bind(this, mView);
 
@@ -83,21 +81,15 @@ public class MainContentFragment extends Fragment {
         switch (view.getId()) {
             case R.id.icon_page_record:
                 viewpagerContent.setCurrentItem(0);
-                iconLightenAnim(iconPageRecord, exPosition);
-                break;
-            case R.id.icon_page_query:
-                viewpagerContent.setCurrentItem(2);
-                lightenIcon(2);
-                iconLightenAnim(iconPageQuery, exPosition);
                 break;
             case R.id.icon_page_analysis:
                 viewpagerContent.setCurrentItem(1);
-                iconLightenAnim(iconPageAnalysis, exPosition);
+                break;
+            case R.id.icon_page_query:
+                viewpagerContent.setCurrentItem(2);
                 break;
             case R.id.icon_page_account:
                 viewpagerContent.setCurrentItem(3);
-                lightenIcon(3);
-                iconLightenAnim(iconPageAccount, exPosition);
                 break;
         }
     }
@@ -119,12 +111,12 @@ public class MainContentFragment extends Fragment {
         viewpagerContent.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                lightenIcon(position);
+
             }
 
             @Override
             public void onPageSelected(int position) {
-
+                lightenIcon(position);
             }
 
             @Override
@@ -132,7 +124,8 @@ public class MainContentFragment extends Fragment {
 
             }
         });
-        iconLightenAnim(iconPageRecord, -1);
+        viewpagerContent.setCurrentItem(0);
+        lightenIcon(0);
     }
 
     private void initColorSateList(){
@@ -140,41 +133,11 @@ public class MainContentFragment extends Fragment {
         light = ColorStateList.valueOf(getResources().getColor(R.color.colorIconAndText));
     }
 
-    private void iconLightenAnim(ImageView view, int exPosition){
-        int colorDark = getResources().getColor(R.color.colorPrimaryLight);
-        int colorLight = getResources().getColor(R.color.colorIconAndText);
-        ObjectAnimator iconDarken, iconLighten;
-        switch (exPosition){
-            case 0:
-                iconDarken = ObjectAnimator.ofArgb(iconPageRecord.getDrawable().mutate(), "tint", colorLight, colorDark).setDuration(500);
-                break;
-            case 1:
-                iconDarken = ObjectAnimator.ofArgb(iconPageRecord.getDrawable().mutate(), "tint", colorLight, colorDark).setDuration(500);
-                break;
-            case 2:
-                iconDarken = ObjectAnimator.ofArgb(iconPageRecord.getDrawable().mutate(), "tint", colorLight, colorDark).setDuration(500);
-                break;
-            case 3:
-                iconDarken = ObjectAnimator.ofArgb(iconPageRecord.getDrawable().mutate(), "tint", colorLight, colorDark).setDuration(500);
-                break;
-            default:
-                iconDarken = new ObjectAnimator();
-                break;
-        }
-        iconLighten = ObjectAnimator.ofArgb(view.getDrawable().mutate(), "tint", colorDark, colorLight).setDuration(500);
-        AnimatorSet set = new AnimatorSet();
-        set.playTogether(iconDarken, iconLighten);
-    }
-
-    private void darkenIcon(){
+    private void lightenIcon(int toPosition){
         iconPageRecord.setImageTintList(dark);
         iconPageAnalysis.setImageTintList(dark);
         iconPageQuery.setImageTintList(dark);
         iconPageAccount.setImageTintList(dark);
-    }
-
-    private void lightenIcon(int toPosition){
-        darkenIcon();
         switch (toPosition){
             case 0:
                 iconPageRecord.setImageTintList(light);
